@@ -8,7 +8,18 @@
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="search-section">
+        <header>
+            <h1>林大社区低碳导航</h1>
+            <p>请输入居委会为您分配的低碳编号</p>
+        </header>
+        <div class="search-box">
+            <input type="text" id="input-id" placeholder="例如: LD101">
+            <button onclick="searchReport()">查询专属报告</button>
+        </div>
+    </div>
+
+    <div class="container" id="report-section" style="display: none;">
         <header>
             <h1>林大社区家庭碳足迹专属报告</h1>
             <p id="house-id">加载中...</p>
@@ -16,10 +27,19 @@
 
         <section class="summary-card">
             <div class="result-main">
-                <span class="label">月度碳足迹总量</span>
+                <span class="label">月度碳足迹估算</span>
                 <div class="value"><span id="total-carbon">0</span> <small>kg CO2e</small></div>
             </div>
             <div class="level-tag" id="carbon-level">评级加载中</div>
+            <div class="compare-tag" id="compare-text">与全国平均水平比较</div>
+            
+            <div class="tree-equivalent">
+                <div class="tree-icon">🌳</div>
+                <div class="tree-text">
+                    本月碳排放需 <strong><span id="tree-count">0</span></strong> 棵树抵消一年<br>
+                    <small>（注：一棵树每年约吸收 22 公斤 CO2）</small>
+                </div>
+            </div>
         </section>
 
         <section class="chart-section">
@@ -36,6 +56,8 @@
 
         <footer>
             项目支持：北京林业大学环境学院环境党支部
+            <br>
+            <a href="#" onclick="backToSearch()" style="color:#2e7d32; text-decoration:underline; margin-top:10px; display:inline-block;">返回重新查询</a>
         </footer>
     </div>
 

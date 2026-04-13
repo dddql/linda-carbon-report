@@ -1,6 +1,6 @@
 body { font-family: -apple-system, sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 20px; }
 .container { max-width: 500px; margin: 0 auto; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-header { text-align: center; border-bottom: 2px solid #e8f5e9; margin-bottom: 20px; }
+header { text-align: center; border-bottom: 2px solid #e8f5e9; margin-bottom: 20px; padding-bottom: 15px;}
 header h1 { color: #2e7d32; font-size: 1.2rem; }
 .summary-card { background: linear-gradient(135deg, #43a047, #2e7d32); color: white; padding: 20px; border-radius: 12px; text-align: center; position: relative; }
 .value { font-size: 2.5rem; font-weight: bold; margin: 10px 0; }
@@ -9,3 +9,16 @@ header h1 { color: #2e7d32; font-size: 1.2rem; }
 .tips-section h3 { color: #388e3c; margin-top: 0; font-size: 1rem; }
 ul { padding-left: 20px; font-size: 0.9rem; line-height: 1.6; }
 footer { text-align: center; font-size: 0.7rem; color: #999; margin-top: 30px; }
+
+/* ======== 新增查询页与数据分析样式 ======== */
+.search-box { display: flex; flex-direction: column; gap: 15px; padding: 20px 0; }
+.search-box input { padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; outline: none; transition: border-color 0.3s;}
+.search-box input:focus { border-color: #43a047; }
+.search-box button { background-color: #2e7d32; color: white; border: none; padding: 12px; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; }
+.search-box button:active { background-color: #1b5e20; }
+
+.compare-tag { font-size: 0.8rem; opacity: 0.9; margin-top: 8px; }
+.tree-equivalent { margin-top: 20px; background: rgba(255, 255, 255, 0.15); padding: 15px; border-radius: 10px; display: flex; align-items: center; text-align: left; gap: 15px; }
+.tree-icon { font-size: 2rem; }
+.tree-text { font-size: 0.9rem; line-height: 1.4; }
+.tree-text strong { font-size: 1.2rem; color: #ffd54f; }

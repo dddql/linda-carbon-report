@@ -3,62 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>林大社区家庭碳足迹专属报告</title>
+    <title>林大社区家庭低碳导航</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
 </head>
 <body>
-    <div class="container" id="search-section">
-        <header>
-            <h1>林大社区低碳导航</h1>
-            <p>请输入居委会为您分配的低碳编号</p>
-        </header>
-        <div class="search-box">
-            <input type="text" id="input-id" placeholder="例如: LD101">
-            <button onclick="searchReport()">查询专属报告</button>
+    <div class="container">
+        <div id="search-view">
+            <header>
+                <h1>林大社区低碳导航</h1>
+                <p>记录生活点滴，共建绿色家园</p>
+            </header>
+            <div class="search-form">
+                <p class="search-tip">请输入居委会发放的家庭专属编号</p>
+                <input type="text" id="id-input" placeholder="例如: LD101" autofocus>
+                <button onclick="handleSearch()" id="search-btn">查询我的碳足迹报告</button>
+            </div>
+            <div class="footer-simple">北京林业大学环境学院环境党支部</div>
         </div>
-    </div>
 
-    <div class="container" id="report-section" style="display: none;">
-        <header>
-            <h1>林大社区家庭碳足迹专属报告</h1>
-            <p id="house-id">加载中...</p>
-        </header>
+        <div id="report-view" style="display: none;">
+            <header>
+                <div class="back-btn" onclick="goBack()">← 返回</div>
+                <h1 id="house-title">专属低碳报告</h1>
+                <p id="house-subtitle">编号加载中...</p>
+            </header>
 
-        <section class="summary-card">
-            <div class="result-main">
-                <span class="label">月度碳足迹估算</span>
-                <div class="value"><span id="total-carbon">0</span> <small>kg CO2e</small></div>
-            </div>
-            <div class="level-tag" id="carbon-level">评级加载中</div>
-            <div class="compare-tag" id="compare-text">与全国平均水平比较</div>
-            
-            <div class="tree-equivalent">
-                <div class="tree-icon">🌳</div>
-                <div class="tree-text">
-                    本月碳排放需 <strong><span id="tree-count">0</span></strong> 棵树抵消一年<br>
-                    <small>（注：一棵树每年约吸收 22 公斤 CO2）</small>
+            <section class="result-card">
+                <div class="main-stats">
+                    <span class="stat-label">月度碳足迹总量</span>
+                    <div class="stat-value"><span id="carbon-val">0</span> <small>kg CO2e</small></div>
+                    <div class="stat-tag" id="level-tag">计算中...</div>
                 </div>
-            </div>
-        </section>
+                <div class="compare-info" id="compare-info">正在对比全国平均水平...</div>
+                
+                <div class="tree-box">
+                    <div class="tree-icon">🌳</div>
+                    <div class="tree-text">
+                        您本月的排碳量需要 <strong id="tree-count">0</strong> 棵树<br>
+                        吸收一年才能抵消
+                    </div>
+                </div>
+            </section>
 
-        <section class="chart-section">
-            <h3>排放分布明细</h3>
-            <div id="pie-chart" style="width: 100%; height: 300px;"></div>
-        </section>
+            <section class="section">
+                <h3>📊 排放分布明细</h3>
+                <div id="chart-container" style="width: 100%; height: 300px;"></div>
+            </section>
 
-        <section class="tips-section">
-            <h3>🌱 专属低碳建议</h3>
-            <ul id="advice-list">
-                <li>数据分析中...</li>
-            </ul>
-        </section>
+            <section class="section suggestion-box">
+                <h3>🌱 专属减碳建议</h3>
+                <ul id="suggestion-list">
+                    <li>正在生成您的减碳方案...</li>
+                </ul>
+            </section>
 
-        <footer>
-            项目支持：北京林业大学环境学院环境党支部
-            <br>
-            <a href="#" onclick="backToSearch()" style="color:#2e7d32; text-decoration:underline; margin-top:10px; display:inline-block;">返回重新查询</a>
-        </footer>
+            <footer class="report-footer">
+                数据来源：国家发改委碳核算指南及相关研究数据
+            </footer>
+        </div>
     </div>
 
     <script src="data.js"></script>

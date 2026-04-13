@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>林大社区家庭碳足迹专属报告</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>林大社区家庭碳足迹专属报告</h1>
+            <p id="house-id">加载中...</p>
+        </header>
+
+        <section class="summary-card">
+            <div class="result-main">
+                <span class="label">月度碳足迹总量</span>
+                <div class="value"><span id="total-carbon">0</span> <small>kg CO2e</small></div>
+            </div>
+            <div class="level-tag" id="carbon-level">评级加载中</div>
+        </section>
+
+        <section class="chart-section">
+            <h3>排放分布明细</h3>
+            <div id="pie-chart" style="width: 100%; height: 300px;"></div>
+        </section>
+
+        <section class="tips-section">
+            <h3>🌱 专属低碳建议</h3>
+            <ul id="advice-list">
+                <li>数据分析中...</li>
+            </ul>
+        </section>
+
+        <footer>
+            项目支持：北京林业大学环境学院环境党支部
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

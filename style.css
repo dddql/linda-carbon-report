@@ -1,0 +1,11 @@
+body { font-family: -apple-system, sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 20px; }
+.container { max-width: 500px; margin: 0 auto; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+header { text-align: center; border-bottom: 2px solid #e8f5e9; margin-bottom: 20px; }
+header h1 { color: #2e7d32; font-size: 1.2rem; }
+.summary-card { background: linear-gradient(135deg, #43a047, #2e7d32); color: white; padding: 20px; border-radius: 12px; text-align: center; position: relative; }
+.value { font-size: 2.5rem; font-weight: bold; margin: 10px 0; }
+.level-tag { background: #ffd54f; color: #5f4b00; padding: 4px 12px; border-radius: 20px; display: inline-block; font-weight: bold; }
+.tips-section { background: #f1f8e9; padding: 15px; border-radius: 10px; margin-top: 20px; }
+.tips-section h3 { color: #388e3c; margin-top: 0; font-size: 1rem; }
+ul { padding-left: 20px; font-size: 0.9rem; line-height: 1.6; }
+footer { text-align: center; font-size: 0.7rem; color: #999; margin-top: 30px; }
